@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spiraling Gear
+* source:	https://sketchfab.com/3d-models/spiraling-gear-8db8f2354f2a4a0b919693ec5c981d80
+* author:	ultrabiker124 (https://sketchfab.com/ultrabiker124)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spiraling Gear" (https://sketchfab.com/3d-models/spiraling-gear-8db8f2354f2a4a0b919693ec5c981d80) by ultrabiker124 (https://sketchfab.com/ultrabiker124) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

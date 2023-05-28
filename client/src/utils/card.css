@@ -1,0 +1,40 @@
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+/* {isFlipped && (
+    <div className="fixed top-0 bottom-0 left-0 right-0 w-full h-full bg-gray-500 z-100">
+      <div className="absolute inset-0 bg-white p-4">
+        {/* Content goes here */
+/*  <button
+          className="bg-red-500 text-white py-2 px-4 rounded"
+          onClick={closeDiv}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  )} */

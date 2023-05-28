@@ -1,0 +1,11 @@
+Model Information:
+* title:	Abstract Twisted Ball
+* source:	https://sketchfab.com/3d-models/abstract-twisted-ball-909112bdfdcb406c832529e0e0d1dda6
+* author:	smice (https://sketchfab.com/smice)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Abstract Twisted Ball" (https://sketchfab.com/3d-models/abstract-twisted-ball-909112bdfdcb406c832529e0e0d1dda6) by smice (https://sketchfab.com/smice) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
