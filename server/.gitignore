@@ -1,0 +1,31 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Log files
+*.log
+*.log.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Build and distribution files
+dist/
+build/
+*.egg-info/
+
+# Visual Studio Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env
