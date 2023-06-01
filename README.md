@@ -1,8 +1,5 @@
 # cinnamonAI-Entrance-Test-NTC
 
-Due to the large file size, the AI model is NOT included in this repo
-You can download the AI Model here: https://drive.google.com/file/d/1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP/view?usp=sharing
-After the model is downloaded, go to the /server directory of the repo, then move the file into the /server/model directory
 
 ## CLIENT SETUP GUIDE:
 
@@ -32,6 +29,10 @@ cd server
 #Install dependencies:
 
 pip install -r requirements.txt
+
+#Install the AI model
+
+gdown 1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP -O ./models/model.h5
 
 #Run the server locally
 

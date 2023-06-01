@@ -15,7 +15,7 @@ app.add_middleware(
     allow_methods=["*"],  # Set the allowed HTTP methods
     allow_headers=["*"],  # Set the allowed headers
 )
-model = tf.keras.models.load_model('./models/model_lightweight_73.h5')
+model = tf.keras.models.load_model('./models/model.h5')
 
 #Just for testing
 @app.get("/")
