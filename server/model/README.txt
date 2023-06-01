@@ -1,0 +1,1 @@
+You can download the AI Model here: https://drive.google.com/file/d/1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP/view?usp=sharing

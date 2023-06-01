@@ -10,12 +10,12 @@ venv/
 # Log files
 *.log
 *.log.*
-
+#heavy AI models
 # Database files
 *.db
 *.sqlite
 *.sqlite3
-
+*.h5
 # Build and distribution files
 dist/
 build/

@@ -1,7 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
 import os
+import io
 import tensorflow as tf
 from PIL import Image, ImageChops, ImageEnhance
 import numpy as np
@@ -36,7 +37,7 @@ def apply_ela(image_path, output_image_path, temp_path):
 
 def imagePreprocessing(image):
     # Resize the image to the desired input shape
-    img = img.resize((512, 512))
+    image = image.resize((512, 512))
     
     #Temporarily store the image
     image_path = os.path.join(os.getcwd(), "image.jpg")
@@ -71,9 +72,13 @@ async def root():
     return {"message": "Hello World"}
 
 @app.post("/predict")
-async def predict(data: dict):
-    
-    input_data = imagePreprocessing(data["image"]) #Preprocess the image
+async def predict(request: Request):
+    #get image from the form data
+    data = await request.form()
+    image = await data["image"].read() #Read the image
+    image = Image.open(io.BytesIO(image)) #Convert the image to PIL format
+    input_data = imagePreprocessing(image) #Preprocess the image
     prediction = model.predict(input_data)  # Use the loaded model for prediction
     result = {"prediction": prediction.tolist()}
+    # result = "result"
     return result
