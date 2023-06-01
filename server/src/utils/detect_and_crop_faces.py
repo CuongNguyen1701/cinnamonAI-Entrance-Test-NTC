@@ -6,7 +6,8 @@ def detect_and_crop_faces(image):
     # Convert PIL image to OpenCV format (numpy array)
     img_array = np.array(image)
     image = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
-
+    # Get the image dimensions
+    height, width, channels = image.shape
     # Load the pre-trained Haar Cascade classifier for face detection
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
@@ -26,14 +27,17 @@ def detect_and_crop_faces(image):
         center_y = y + h // 2
 
         # Calculate the size of the square
-        square_size = max(w, h)
+        scale = 1.5
+        square_size = round(max(w, h)*scale)
 
-        # Calculate the coordinates of the square ROI
-        roi_x = center_x - square_size // 2
-        roi_y = center_y - square_size // 2
+        # Calculate the coordinates of the square ROI with boundary checks
+        roi_x = max(center_x - square_size // 2, 0)
+        roi_y = max(center_y - square_size // 2, 0)
+        roi_x_end = min(roi_x + square_size, width)
+        roi_y_end = min(roi_y + square_size, height)
 
-        # Crop the face region from the image
-        face_roi = image[roi_y:roi_y+square_size, roi_x:roi_x+square_size]
+        # Crop the face region from the image with boundary checks
+        face_roi = image[roi_y:roi_y_end, roi_x:roi_x_end]
 
         # Convert the OpenCV image to PIL format
         pil_image = Image.fromarray(cv2.cvtColor(face_roi, cv2.COLOR_BGR2RGB))
