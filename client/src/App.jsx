@@ -1,8 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState, useId, useEffect } from "react";
-import { Navbar, MainPage, Login } from "./components";
-import { LoginSuccess, LoginError } from "./components/LoginComponents";
-import axios from "axios";
+import { Navbar, MainPage } from "./components";
 const App = () => {
   return (
     <BrowserRouter>

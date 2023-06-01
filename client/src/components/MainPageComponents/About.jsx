@@ -90,7 +90,7 @@ const About = () => {
     <div className="select-none">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>About</h2>
+        <h2 className={styles.sectionHeadText}>About me</h2>
       </motion.div>
 
       <motion.p
