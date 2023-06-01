@@ -1,6 +1,5 @@
 # cinnamonAI-Entrance-Test-NTC
 
-
 ## CLIENT SETUP GUIDE:
 
 cd client
@@ -13,6 +12,7 @@ npm run dev
 ## SERVER SETUP GUIDE:
 
 cd server
+cd src
 
 #Activate the virtual environment
 
