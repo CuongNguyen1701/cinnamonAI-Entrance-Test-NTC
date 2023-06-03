@@ -28,9 +28,9 @@ def image_preprocess(image, image_size=(512,512)):
     #Convert the image to appropriate format for AI model input
     output_image = Image.open(output_image_path)
     output_image = np.array(output_image) #Convert the image to numpy array
-    output_image = output_image / 255.0 #Normalize the image
+    output_image = output_image / 255.0  # Normalize the image (0-1)
     output_image = np.expand_dims(output_image, axis= 0) #Expand the dimensions to match the input shape of the model
-    
+    print(output_image.shape)
     #Delete the temporary files and folders
     os.remove(output_image_path)
     os.remove(image_path)

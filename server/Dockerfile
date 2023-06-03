@@ -1,18 +1,22 @@
-# 
+
 FROM python:3.9
 
-# 
 WORKDIR /app
 
-# 
-COPY src/ /app
+COPY ./src/requirements.txt /app/requirements.txt
 
-# 
-RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+RUN pip install --upgrade pip
 
-RUN gdown 1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP -O /app/models/model.h5
-# 
-EXPOSE 80
+RUN pip install -r requirements.txt
 
-# 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+COPY ./src /app/src
+
+ENV FRONT_END_URL https://cinnamon-ai-entrance-test-ntc.vercel.app
+
+RUN gdown 1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP -O /app/src/models/model.h5
+
+RUN python3 -m venv venv
+
+RUN source venv/bin/activate
+
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80"]

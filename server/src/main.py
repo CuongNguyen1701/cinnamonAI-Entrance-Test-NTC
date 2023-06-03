@@ -7,6 +7,8 @@ import io
 import tensorflow as tf
 from PIL import Image
 from utils.image_preprocess import image_preprocess
+from models.model_loader import model_loader
+from keras.models import load_model
 
 load_dotenv()
 app = FastAPI()
@@ -21,12 +23,19 @@ app.add_middleware(
     allow_methods=["*"],  # Set the allowed HTTP methods
     allow_headers=["*"],  # Set the allowed headers
 )
-model = tf.keras.models.load_model('./models/model.h5')
+model = load_model('./models/model.h5')
+
+# model = model_loader('./models/model.h5')
+
+
+# model = tf.saved_model.load('./models/Model')
+# predict_fn = model.signatures['serving_default']
 
 #Just for testing
 @app.get("/")
 async def root():
-    return {"message": "Hello There this is my root api endpoint. I'm Cuong by the way."}
+    # return {"message": "Hello There this is my root api endpoint. I'm Cuong by the way."}
+    return {"signatures": list(model.signatures.keys())}
 
 @app.post("/predict")
 async def predict(request: Request):
@@ -36,7 +45,8 @@ async def predict(request: Request):
     image = Image.open(io.BytesIO(image)) #Convert the image to PIL format
     image = image.convert("RGB") # Convert the image to JPEG format
     input_data = image_preprocess(image) #Preprocess the image
-    prediction = model.predict(input_data)  # Use the loaded model for prediction
+    # prediction = predict_fn(input_data)  # Use the loaded model for prediction
+    prediction = model.predict(input_data)
+    print(prediction)
     result = {"prediction": prediction.tolist()}
-    # result = "result"
     return result

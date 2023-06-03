@@ -3,11 +3,14 @@ import numpy as np
 from PIL import Image
 
 def detect_and_crop_faces(image):
+    original = image
     # Convert PIL image to OpenCV format (numpy array)
     img_array = np.array(image)
     image = cv2.cvtColor(img_array, cv2.COLOR_RGB2BGR)
     # Get the image dimensions
     height, width, channels = image.shape
+    if(height == width):
+        return [original]
     # Load the pre-trained Haar Cascade classifier for face detection
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
