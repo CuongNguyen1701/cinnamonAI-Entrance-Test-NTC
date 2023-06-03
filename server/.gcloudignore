@@ -29,5 +29,4 @@ build/
 # PyCharm
 .idea/
 
-# Environment variables
-.env
+
