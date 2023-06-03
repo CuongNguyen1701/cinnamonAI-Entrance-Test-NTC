@@ -23,8 +23,12 @@ app.add_middleware(
 )
 # model = load_model('./models/model1/')
 
+model_path = '/app/src/model'
 
-model = tf.saved_model.load(os.path.join(os.getcwd(), 'model'))
+# model = tf.saved_model.load(os.path.join(os.getcwd(), 'model'))
+model = tf.saved_model.load(model_path)
+
+
 predict_fn = model.signatures['serving_default']
 
 #Just for testing
