@@ -7,8 +7,7 @@ import io
 import tensorflow as tf
 from PIL import Image
 from utils.image_preprocess import image_preprocess
-# from models.model_loader import model_loader
-from keras.models import load_model
+from tensorflow.python.keras.models import load_model
 
 load_dotenv()
 app = FastAPI()
@@ -25,8 +24,6 @@ app.add_middleware(
 )
 model = load_model('./models/model.h5')
 
-# model = model_loader('./models/model.h5')
-
 
 # model = tf.saved_model.load('./models/Model')
 # predict_fn = model.signatures['serving_default']
@@ -34,8 +31,7 @@ model = load_model('./models/model.h5')
 #Just for testing
 @app.get("/")
 async def root():
-    # return {"message": "Hello There this is my root api endpoint. I'm Cuong by the way."}
-    return {"signatures": list(model.signatures.keys())}
+    return {"message": "Hello There this is my root api endpoint. I'm Cuong by the way."}
 
 @app.post("/predict")
 async def predict(request: Request):
