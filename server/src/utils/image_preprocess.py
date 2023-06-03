@@ -2,8 +2,8 @@
 import os
 from PIL import Image
 import numpy as np
-from apply_ela import apply_ela
-from detect_and_crop_faces import detect_and_crop_faces
+from utils.apply_ela import apply_ela
+from utils.detect_and_crop_faces import detect_and_crop_faces
 def image_preprocess(image, image_size=(512,512)):
     faces = detect_and_crop_faces(image)
     if len(faces) > 0:
