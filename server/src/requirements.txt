@@ -1,7 +1,5 @@
 fastapi>=0.95.2
-# Keras>=2.4.3
-# keras_nightly>=2.5.0.dev2021032900
-numpy>=1.19.5
+Keras>=2.4.3
 opencv_python>=4.6.0.66
 Pillow>=9.2.0
 python-dotenv==1.0.0
