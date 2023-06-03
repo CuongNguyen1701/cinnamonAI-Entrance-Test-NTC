@@ -1,1 +1,0 @@
-AI Model designed and Trained by: Nguyen Truc Cuong

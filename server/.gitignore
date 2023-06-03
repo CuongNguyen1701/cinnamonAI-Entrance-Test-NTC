@@ -13,7 +13,9 @@ venv/
 
 #heavy AI models
 *.h5
-
+*.pb
+src/model/variables
+src/model/assets
 # Database files
 *.db
 *.sqlite

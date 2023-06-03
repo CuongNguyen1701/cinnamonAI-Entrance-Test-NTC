@@ -24,9 +24,6 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 #Copy source code
 COPY ./src /app/src
 
-#Download model
-RUN gdown 1LfH3zbsO6y9uCM_PquTVKOLhXooOWFBP -O /app/src/models/model.h5
-
 RUN cd /app
 
 CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "80"]
