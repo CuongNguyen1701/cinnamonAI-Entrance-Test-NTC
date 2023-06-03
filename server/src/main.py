@@ -7,7 +7,6 @@ import io
 import tensorflow as tf
 from PIL import Image
 from utils.image_preprocess import image_preprocess
-from tensorflow.python.keras.models import load_model
 
 load_dotenv()
 app = FastAPI()
@@ -22,11 +21,11 @@ app.add_middleware(
     allow_methods=["*"],  # Set the allowed HTTP methods
     allow_headers=["*"],  # Set the allowed headers
 )
-model = load_model('./models/model.h5')
+# model = load_model('./models/model1/')
 
 
-# model = tf.saved_model.load('./models/Model')
-# predict_fn = model.signatures['serving_default']
+model = tf.saved_model.load('./models/model')
+predict_fn = model.signatures['serving_default']
 
 #Just for testing
 @app.get("/")
@@ -41,8 +40,11 @@ async def predict(request: Request):
     image = Image.open(io.BytesIO(image)) #Convert the image to PIL format
     image = image.convert("RGB") # Convert the image to JPEG format
     input_data = image_preprocess(image) #Preprocess the image
-    # prediction = predict_fn(input_data)  # Use the loaded model for prediction
-    prediction = model.predict(input_data)
+    # Convert input tensor to float
+    input_data = tf.cast(input_data, tf.float32)
+    prediction = predict_fn(conv2d_input=input_data)  # Use the loaded model for prediction
+    # prediction = model.predict(input_data)
     print(prediction)
-    result = {"prediction": prediction.tolist()}
+    # result =  {"prediction": [[1]]}
+    result = {"prediction": prediction['dense_1'].numpy().tolist()}
     return result
