@@ -7,7 +7,7 @@ import io
 import tensorflow as tf
 from PIL import Image
 from utils.image_preprocess import image_preprocess
-from models.model_loader import model_loader
+# from models.model_loader import model_loader
 from keras.models import load_model
 
 load_dotenv()
