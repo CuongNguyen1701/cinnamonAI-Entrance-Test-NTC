@@ -52,7 +52,7 @@ const Navbar = () => {
           />
           <p className="text-white text-[18px] font-bold cursor-pointer flex md:flex-row flex-col">
             Cuong &nbsp;
-            <span className="hidden sm:block"> | Imengine</span>
+            <span className="hidden sm:block"> | CinnamonAI</span>
           </p>
         </Link>
 
