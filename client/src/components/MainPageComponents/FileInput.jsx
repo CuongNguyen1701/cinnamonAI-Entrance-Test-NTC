@@ -23,10 +23,9 @@ const FileInput = () => {
 
     formData.append("image", file);
 
-    for (const entry of formData) {
-      console.log(entry); //Show all entries in formData
-    }
-    console.log(backendUrl);
+    // for (const entry of formData) {
+    //   console.log(entry); //Show all entries in formData
+    // }
     try {
       setLoading(1);
       const response = await axios.post(`${backendUrl}/predict`, formData, {
@@ -169,7 +168,7 @@ const FileInput = () => {
           <GearCanvas loading={loading} />
           {loading ? (
             <div className="self-center animate-pulse text-2xl">
-              Waiting for the Ayy Eye to do the magic...
+              Waiting for the Ayy Eye...
             </div>
           ) : null}
         </motion.div>
