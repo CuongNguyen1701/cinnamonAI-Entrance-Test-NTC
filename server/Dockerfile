@@ -27,9 +27,10 @@ COPY ./src /app/src
 #Download model
 RUN gdown 1kJvvTlT9VAqP1drZniMdzbYuO00CmNac -O /app/src/model/fingerprint.pb
 RUN gdown 1SWhkFJH_QYhicFn6TePhpCtCSz4w-jQ8 -O /app/src/model/saved_model.pb
+RUN mkdir -p /app/src/model/variables
 RUN gdown 1U6lTdDUktU7AwkzpCoKVMBM-5aLsI30T -O /app/src/model/variables/variables.data-00000-of-00001
 RUN gdown 18x6TPScu6LOBCW9dptpOOce7rH-jtp-Y -O /app/src/model/variables/variables.index
-RUN mkdir /app/src/model/assets
+RUN mkdir -p /app/src/model/assets
 
 RUN cd /app
 
