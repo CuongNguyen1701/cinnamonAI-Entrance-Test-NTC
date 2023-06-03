@@ -21,11 +21,10 @@ app.add_middleware(
     allow_methods=["*"],  # Set the allowed HTTP methods
     allow_headers=["*"],  # Set the allowed headers
 )
-# model = load_model('./models/model1/')
 
-model_path = '/app/src/model'
+#/app/... is the path in the docker container
+model_path = '/app/src/model' if os.path.exists('/app/src/model') else os.path.join(os.getcwd(), 'model')
 
-# model = tf.saved_model.load(os.path.join(os.getcwd(), 'model'))
 model = tf.saved_model.load(model_path)
 
 
