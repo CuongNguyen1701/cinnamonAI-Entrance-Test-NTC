@@ -47,28 +47,28 @@ cd src
 #FOR LINUX USERS:
 
 ```sh
-        python3 -m venv venv
-        source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 #FOR WINDOWS USERS:
 
 ```sh
-        python -m venv venv
-        ./venv/Scripts/activate
+python -m venv venv
+./venv/Scripts/activate
 ```
 #Install dependencies:
 
 ```sh
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
-    #Install the AI model
-    #Remember to create ./model/variables and ./model/assets directories first!
+#Install the AI model
+#Remember to create ./model/variables and ./model/assets directories first!
 
-    gdown 1kJvvTlT9VAqP1drZniMdzbYuO00CmNac -O ./model/fingerprint.pb
-    gdown 1SWhkFJH_QYhicFn6TePhpCtCSz4w-jQ8 -O ./model/saved_model.pb
-    gdown 1U6lTdDUktU7AwkzpCoKVMBM-5aLsI30T -O ./model/variables/variables.data-00000-of-00001
-    gdown 18x6TPScu6LOBCW9dptpOOce7rH-jtp-Y -O ./model/variables/variables.index
-    #Run the server locally
+gdown 1kJvvTlT9VAqP1drZniMdzbYuO00CmNac -O ./model/fingerprint.pb
+gdown 1SWhkFJH_QYhicFn6TePhpCtCSz4w-jQ8 -O ./model/saved_model.pb
+gdown 1U6lTdDUktU7AwkzpCoKVMBM-5aLsI30T -O ./model/variables/variables.data-00000-of-00001
+gdown 18x6TPScu6LOBCW9dptpOOce7rH-jtp-Y -O ./model/variables/variables.index
+#Run the server locally
 
-    uvicorn main:app --reload
+uvicorn main:app --reload
 ```
