@@ -1,4 +1,4 @@
-# cinnamonAI-Entrance-Test-NTC
+# Demo
 
 You can try out the live demo here: https://cinnamon-ai-entrance-test-ntc.vercel.app/
 
