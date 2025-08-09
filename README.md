@@ -20,43 +20,44 @@ Regarding the application, I setup a reactJS client using Vite, the UI and basic
 
 # Usage
 
-###CLIENT SETUP GUIDE###
+## CLIENT SETUP GUIDE 
 
-#Go to the client folder
+1. Go to the client folder
 ```sh
 cd client
 npm i --save --force
 ```
 
-#Run the client locally
+2. Run the client locally
 
 ```sh
 npm run dev
 ```
-###SERVER SETUP GUIDE###
+## SERVER SETUP GUIDE
 
-#Go to the src folder of the server
+1. Go to the src folder of the server
 
 ```sh
 cd server
 cd src
 ```
 
-#Activate the virtual environment
+2. Activate the virtual environment
 
-#FOR LINUX USERS:
+- FOR LINUX USERS:
 
 ```sh
 python3 -m venv venv
 source venv/bin/activate
 ```
-#FOR WINDOWS USERS:
+- FOR WINDOWS USERS:
 
 ```sh
 python -m venv venv
 ./venv/Scripts/activate
 ```
-#Install dependencies:
+
+3. Install dependencies:
 
 ```sh
 pip install -r requirements.txt
